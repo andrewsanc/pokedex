@@ -1,5 +1,6 @@
 import React from "react";
 import Pokecard from "./Pokecard";
+import "./Pokedex.css";
 
 const defaultProps = {
   pokemon: [
@@ -29,7 +30,7 @@ const Pokedex = () => {
   return (
     <div className='Pokedex'>
       <h1>Pokedex!</h1>
-      {renderPokemonCards}
+      <div className='Pokedex-cards'>{renderPokemonCards}</div>
     </div>
   );
 };
