@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Pokedex from "./Pokedex";
 
 const defaultProps = {
@@ -15,8 +15,8 @@ const defaultProps = {
 };
 
 const Pokegame = () => {
-  let hand1 = [];
-  let hand2 = [...defaultProps.pokemon];
+  const [hand1, setHand1] = useState([]);
+  const [hand2, setHand2] = useState([...defaultProps.pokemon]);
 
   while (hand1.length < hand2.length) {
     let randIdx = Math.floor(Math.random() * hand2.length);
