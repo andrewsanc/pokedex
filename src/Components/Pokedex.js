@@ -6,6 +6,7 @@ const Pokedex = ({ pokemon, totalExp, isWinner }) => {
   const renderPokemonCards = pokemon.map((pokeObj) => {
     return (
       <Pokecard
+        key={pokeObj.id}
         id={pokeObj.id}
         name={pokeObj.name}
         type={pokeObj.type}
@@ -14,11 +15,17 @@ const Pokedex = ({ pokemon, totalExp, isWinner }) => {
     );
   });
 
+  let title;
+  if (isWinner) {
+    title = <h1 className='Pokedex-winner'>Winning Hand</h1>;
+  } else {
+    title = <h1 className='Pokedex-loser'>Losing Hand</h1>;
+  }
+
   return (
     <div className='Pokedex'>
-      <h1>Pokedex!</h1>
-      <p>Total Exp: {totalExp}</p>
-      <p>{isWinner ? "WINNER" : "LOSER"}</p>
+      {title}
+      <h4>Total Exp: {totalExp}</h4>
       <div className='Pokedex-cards'>{renderPokemonCards}</div>
     </div>
   );
