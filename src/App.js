@@ -1,11 +1,11 @@
 import React from "react";
-import Pokecard from "./Components/Pokecard";
+import Pokedex from "./Components/Pokedex";
 import "./App.css";
 
 const App = () => {
   return (
     <div className='app'>
-      <Pokecard id={4} name='Charmander' type='fire' exp={62} />
+      <Pokedex />
     </div>
   );
 };
